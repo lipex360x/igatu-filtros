@@ -1,0 +1,55 @@
+{
+	"Template Snippets": {
+    "prefix": "snippetTemplate",
+    "body": [
+      "\"${1:SNIPPET_TITLE}\": {",
+      "  \"prefix\": \"${2:PREFIX}\",",
+      "  \"body\": [",
+      "    \"${3:BODY}\"",
+      "  ]",
+      "},",
+      ""
+    ]
+  },
+
+  "WP add function": {
+    "prefix": "wpAddFunction",
+    "body": [
+      "function ${1:function_name}() {",
+      "${3}  ",
+      "}",
+      "add_action('${2|init,rest_api_init,pre_get_posts,wp_enqueue_scripts,after_setup_theme|}', '${1:function_name}');",
+      ""
+    ]
+  },
+
+  "Create Route": {
+    "prefix": "createRoute",
+    "body": [
+      "<?php",
+      "class ${1:NAME}Route {",
+      "  function __construct() {",
+      "    \\$this->route = '${2:ROUTE}';",
+      "",
+      "    add_action('rest_api_init', array(\\$this, 'registerRoute'));",
+      "  }",
+      "",
+      "  function execute(\\$request) {",
+      "    return 'Hello Route';",
+      "  }",
+      "",
+      "  function registerRoute() {",
+      "    \\$rest_params = array(",
+      "      'methods'   => WP_REST_Server::${3|READABLE,CREATABLE,EDITABLE,DELETABLE|},",
+      "      'callback'  => array(\\$this, 'execute'),",
+      "    );",
+      "    register_rest_route('university/v1', \\$this->route, array(\\$rest_params));",
+      "  }",
+      "}",
+      "",
+      "\\$registerRoute = new ${1:NAME}Route();",
+      ""
+    ]
+  },
+  
+}

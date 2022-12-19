@@ -23,3 +23,10 @@ function themeFeatures() {
   add_image_size('pageBanner', 1500, 350, true);
 }
 add_action('after_setup_theme', 'themeFeatures');
+
+// WP Migration
+function migrationIgnoreFiles() {
+  $exclude[] = 'themes/wp-gen-theme/node_modules';
+  return $exclude;
+}
+add_action('ai1wm_exclude_content_from_export', 'migrationIgnoreFiles');
