@@ -87,10 +87,10 @@ const search = new _Search__WEBPACK_IMPORTED_MODULE_0__["default"]();
 
 /***/ }),
 
-/***/ "./src/styles/_index.scss":
-/*!********************************!*\
-  !*** ./src/styles/_index.scss ***!
-  \********************************/
+/***/ "./src/_index.scss":
+/*!*************************!*\
+  !*** ./src/_index.scss ***!
+  \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -162,8 +162,8 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/_index.scss */ "./src/styles/_index.scss");
-/* harmony import */ var _scripts_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/index */ "./src/scripts/index.js");
+/* harmony import */ var _scripts_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scripts/index */ "./src/scripts/index.js");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_index.scss */ "./src/_index.scss");
 
 
 })();

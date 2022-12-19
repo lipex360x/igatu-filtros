@@ -9,4 +9,6 @@
 
 </head>
 <body <?php body_class();?>>
+
+<?php get_template_part('src/template-parts/header/index') ?>
   

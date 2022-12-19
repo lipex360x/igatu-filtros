@@ -426,13 +426,9 @@ template {
   unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 
-/*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/styles/_index.scss ***!
-  \***********************************************************************************************************************************************************************************************************************************************/
-body {
-  background-color: #333;
-}
-
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/_index.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************/
 * {
   padding: 0;
   margin: 0;
@@ -552,6 +548,108 @@ button {
   font-weight: 300;
   outline: none;
   color: #f65335;
+}
+
+.header {
+  padding: 0.5rem 0;
+}
+.header .container {
+  justify-content: space-between;
+  align-items: center;
+}
+.header img {
+  width: 70px;
+}
+.header nav ul {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  font-size: 1.6rem;
+}
+.header nav ul li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  text-transform: uppercase;
+  transition: all 250ms linear 0s;
+}
+.header nav ul li:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+.header nav ul li a {
+  color: #2c3e50;
+}
+@media (max-width: 768px) {
+  .header {
+    padding: 1.6rem 0;
+  }
+  .header img {
+    width: 120px;
+  }
+  .header nav {
+    display: none;
+  }
+  .header .menu-toggle {
+    width: 28px;
+  }
+  .header .menu-toggle .one,
+  .header .menu-toggle .two,
+  .header .menu-toggle .three {
+    background-color: #ffffff;
+    height: 3px;
+    width: 100%;
+    border-radius: 6px;
+    margin: 5px auto;
+    transition-duration: 0.3s;
+  }
+  .header .menu-section.on {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header .menu-section.on .menu-toggle {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+  }
+  .header .menu-section.on .menu-toggle .one {
+    transform: rotate(45deg) translate(0px, 4px);
+  }
+  .header .menu-section.on .menu-toggle .two {
+    opacity: 0;
+  }
+  .header .menu-section.on .menu-toggle .three {
+    transform: rotate(-45deg) translate(7px, -12px);
+  }
+  .header .menu-section.on nav {
+    display: block;
+  }
+  .header .menu-section.on nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .header .menu-section.on nav ul li {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header .menu-section.on nav ul li a {
+    transition-duration: 0.5s;
+    font-size: 3rem;
+  }
 }
 
 /*# sourceMappingURL=index.css.map*/
