@@ -1,0 +1,25 @@
+{
+  "name": "igatu",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "wp-scripts build",
+    "dev": "wp-scripts start",
+    "pregen": "tsup generators/plopfile.ts --format esm,cjs --dts --outDir .plop && copyfiles -u 1 generators/**/*.hbs .plop ",
+    "gen": "plop --plopfile .plop/plopfile.mjs"
+  },
+  "dependencies": {
+    "@fontsource/source-sans-pro": "^4.5.11",
+    "@wordpress/scripts": "^25.0.0",
+    "axios": "^1.2.1",
+    "font-awesome": "^4.7.0",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "plop": "^3.1.1",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.4"
+  }
+}

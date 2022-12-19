@@ -1,0 +1,19 @@
+<?php
+function {{singularName}}PostType() {
+  register_post_type('{{singularName}}', array(
+    'rewrite' => array('slug' => '{{pluralName}}'),
+    'has_archive' => true,
+    'public' => true,
+    'menu_icon' => 'dashicons-star-empty',
+    'show_in_rest' => true,
+    'supports' => array('title', 'editor', 'thumbnail'),
+    'labels' => array(
+      'name' => '{{pascalCase singularName}}',
+      'sigular_name' => '{{pascalCase singularName}}',
+      'add_new_item' => 'Add New {{pascalCase singularName}}',
+      'edit_item' => 'Edit {{pascalCase singularName}}',
+      'all_items' => 'All {{pascalCase pluralName}}',
+    )
+  ));
+}
+add_action('init', '{{singularName}}PostType');

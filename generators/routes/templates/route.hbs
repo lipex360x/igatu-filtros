@@ -1,0 +1,41 @@
+<?php
+// /wp-json/MAIN_ROUTE/v1/{{route}}
+
+class {{pascalCase componentName}}Route {
+  function __construct() {
+    $this->path = 'MAIN_ROUTE/v1';
+    $this->route = '{{componentName}}';
+
+    add_action('rest_api_init', array($this, 'registerRoute'));
+  }
+
+  function dataMapper($data) {
+    $mapper = array();
+
+    while($data->have_posts()) {
+      $data->the_post();
+      
+      array_push($mapper, array(
+        'id' => get_the_id(),
+        'title' => get_the_title(),
+        'permalink' => get_the_permalink(),
+      ));
+    }
+
+    return $mapper;
+  }
+
+  function execute($request) {
+    return array('message' => 'Hello route {{componentName}}');
+  }
+
+  function registerRoute() {
+    $rest_params = array(
+      'methods'   => WP_REST_Server::{{httpMethod}},
+      'callback'  => array($this, 'execute'),
+    );
+    register_rest_route($this->path, $this->route, array($rest_params));
+  }
+}
+
+$registerRoute = new {{pascalCase componentName}}Route();
