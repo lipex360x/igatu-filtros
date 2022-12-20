@@ -1,6 +1,7 @@
 .header {
   // background: green;
   padding: 0.5rem 0;
+  box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.2);
 
   .container {
     justify-content: space-between;
@@ -15,13 +16,14 @@
     display: flex;
     height: 100%;
     align-items: center;
-    font-size: 1.6rem;
-
+    font-size: 1.4rem;
+    gap: 2rem;
+    
     li {
       height: 100%;
       display: flex;
       align-items: center;
-      padding: 2rem;
+      padding: 2rem 0;
 
       text-transform: uppercase;
       transition: all 250ms linear 0s;
