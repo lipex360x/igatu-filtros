@@ -1,9 +1,11 @@
 <header class="header">
     <div class="container">
+      <a href="<?= site_url() ?>">
       <img
         src="<?= get_theme_file_uri('src/assets/logomarca.jpeg')?>"
         alt="Rocketseat"
       />
+      </a>
       <div class="menu-section">
         
         <div class="menu-toggle">

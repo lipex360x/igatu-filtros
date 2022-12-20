@@ -1,6 +1,7 @@
 .hero {
   .container {
     justify-content: space-between;
+    gap: 2rem;
 
     @include onMobile {
       flex-direction: column;
@@ -30,10 +31,16 @@
       font-size: 3.2rem;
       line-height: 5rem;
     }
+
+    h3 {
+      color: $grey;
+      font-size: 2rem;
+      line-height: 3rem;
+    }
   
     p {
-      color: $blueDark;
-      line-height: 1.2rem;
+      color: $grey;
+      line-height: 2.6rem;
     }
 
     @include onMobile {

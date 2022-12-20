@@ -1,6 +1,5 @@
 <section class="hero">
   <div class="container">
-
     <div class="content">
       <h2><?= get_field('hero_titulo') ?></h2>
       <?= get_field('hero_subtitulo') ?>

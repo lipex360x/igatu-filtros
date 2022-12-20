@@ -675,6 +675,7 @@ section {
 
 .hero .container {
   justify-content: space-between;
+  gap: 2rem;
 }
 @media (max-width: 768px) {
   .hero .container {
@@ -701,9 +702,14 @@ section {
   font-size: 3.2rem;
   line-height: 5rem;
 }
+.hero .content h3 {
+  color: rgb(75, 75, 75);
+  font-size: 2rem;
+  line-height: 3rem;
+}
 .hero .content p {
-  color: #2c3e50;
-  line-height: 1.2rem;
+  color: rgb(75, 75, 75);
+  line-height: 2.6rem;
 }
 @media (max-width: 768px) {
   .hero .content {

@@ -1,7 +1,8 @@
 <?php
 class RegisterElemento {
   function __construct() {
-    $this->singularName = 'elemento';
+    $this->slug = 'elementos';
+    $this->singularName = 'Elemento';
     $this->pluralName = 'Elementos';
     $this->menuIcon = 'dashicons-database';
 
@@ -10,7 +11,7 @@ class RegisterElemento {
 
   function register() {
     register_post_type($this->singularName, array(
-      'rewrite' => array('slug' => $this->pluralName),
+      'rewrite' => array('slug' => $this->slug),
       'has_archive' => true,
       'public' => true,
       'menu_icon' => $this->menuIcon,

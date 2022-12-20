@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-<?php get_template_part('src/template-parts/hero/index') ?>
 
 <section class="cards">
   <div class="container">

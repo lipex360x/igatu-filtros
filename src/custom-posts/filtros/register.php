@@ -1,6 +1,7 @@
 <?php
 class RegisterFiltro {
   function __construct() {
+    $this->slug = 'filtros';
     $this->singularName = 'filtro';
     $this->pluralName = 'Filtros';
     $this->menuIcon = 'dashicons-filter';
@@ -10,7 +11,7 @@ class RegisterFiltro {
 
   function register() {
     register_post_type($this->singularName, array(
-      'rewrite' => array('slug' => $this->pluralName),
+      'rewrite' => array('slug' => $this->slug),
       'has_archive' => true,
       'public' => true,
       'menu_icon' => $this->menuIcon,
