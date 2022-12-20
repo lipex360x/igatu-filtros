@@ -5,8 +5,8 @@ export default class Search {
     this.isSpinnerVisible = false
     
     this.showOverlay = true;
-    // this.menuSection = document.querySelector('.menu-section')
-    // this.searchToggle = this.menuSection.querySelector('.search-toggle')
+    this.menuSection = document.querySelector('.menu-section')
+    this.searchToggle = this.menuSection.querySelector('.menu-toggle')
 
     this.searchOverlay = document.querySelector('.search-overlay')
     this.closeButton = document.querySelector('.search-close')
@@ -20,7 +20,7 @@ export default class Search {
   events() {
     document.addEventListener('keydown', e => this.keyPressDispatcher(e))
 
-    // this.searchToggle.addEventListener('click', () => this.openOverlay())
+    this.searchToggle.addEventListener('click', () => this.openOverlay())
     this.closeButton.addEventListener('click', () => this.closeOverlay())
 
     this.searchField.addEventListener('keyup', () => this.typingLogic())

@@ -606,18 +606,19 @@ section {
     padding: 1.6rem 0;
   }
   .header img {
-    width: 120px;
+    width: 50px;
   }
   .header nav {
     display: none;
   }
   .header .menu-toggle {
     width: 28px;
+    cursor: pointer;
   }
   .header .menu-toggle .one,
   .header .menu-toggle .two,
   .header .menu-toggle .three {
-    background-color: #ffffff;
+    background-color: #2c3e50;
     height: 3px;
     width: 100%;
     border-radius: 6px;

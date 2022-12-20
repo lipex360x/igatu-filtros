@@ -42,7 +42,7 @@
     padding: 1.6rem 0;
 
     img {
-      width: 120px;
+      width: 50px;
     }
     nav {
       display: none;
@@ -50,11 +50,12 @@
 
     .menu-toggle {
       width: 28px;
+      cursor: pointer;
 
       .one,
       .two,
       .three {
-        background-color: $white;
+        background-color: $blueDark;
         height: 3px;
         width: 100%;
         border-radius: 6px;
@@ -82,7 +83,7 @@
           position: absolute;
           right: 20px;
           top: 18px;
-
+          
           .one { transform: rotate(45deg) translate(0px, 4px) }
           .two { opacity: 0; }
           .three { transform: rotate(-45deg) translate(7px, -12px) }
