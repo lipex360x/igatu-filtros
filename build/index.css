@@ -21479,7 +21479,7 @@ html {
 }
 @media (max-width: 768px) {
   html {
-    font-size: 50%;
+    font-size: 56%;
   }
 }
 
@@ -21644,18 +21644,21 @@ section {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  background-color: #2c3e50;
+  background-color: #F2F9FE;
+  border-radius: 8px;
   transition: all 0.2s ease 0s;
 }
 .cards .card:hover {
   transform: translateY(-0.3rem);
-  box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.2);
 }
 .cards .card .image {
   width: 100%;
   padding-top: 75%; /* 16:9 */
   overflow: hidden;
   position: relative;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .cards .card .image img {
   width: 100%;
@@ -21665,12 +21668,20 @@ section {
   transform: translate(-50%, -50%);
 }
 .cards .card .content {
-  padding: 2rem;
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  color: #ffffff;
   line-height: 2.6rem;
+}
+.cards .card .content .features {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cards .card .content .features span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 .cards .card .content .details {
   display: flex;
@@ -21680,8 +21691,7 @@ section {
 .cards .card .content .details .price {
   background-color: #55a0d9;
   padding: 0.5rem 2rem;
-  border-radius: 20px;
-  filter: brightness(90%);
+  border-radius: 8px;
 }
 
 .header {

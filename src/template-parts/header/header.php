@@ -30,7 +30,7 @@
             </li>
             <li>
               <a href="javascript:void(0)" class="search-toggle">
-                <i class="fa fa-search" aria-hidden="true"></i>
+                <i class="ph-magnifying-glass"></i>
               </a>
             </li>
           </ul>

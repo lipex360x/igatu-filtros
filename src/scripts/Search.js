@@ -6,7 +6,7 @@ export default class Search {
     
     this.showOverlay = true;
     this.menuSection = document.querySelector('.menu-section')
-    this.searchToggle = this.menuSection.querySelector('.menu-toggle')
+    this.searchToggle = this.menuSection.querySelector('.search-toggle')
 
     this.searchOverlay = document.querySelector('.search-overlay')
     this.closeButton = document.querySelector('.search-close')

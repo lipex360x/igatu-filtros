@@ -11,7 +11,6 @@
     </header>
     
     <div class="section-cards">
-
       <?php while($params['data']->have_posts()) : $params['data']->the_post(); ?>
 
       <a href="">
@@ -21,13 +20,15 @@
         </div>
 
         <div class="content">
-          <p class="title description">
-            <?php the_title(); ?>
-          </p>
-
+          <h3 class="title description"><?php the_title(); ?></h3>
+          <div class="features">
+            <span><i class="ph-battery-high"></i> hello</span>
+            <span><i class="ph-battery-high"></i> hello</span>
+            <span><i class="ph-battery-high"></i> hello</span>
+          </div>
           <div class="details">
             <p class="duration">57 Min</p>
-            <p class="price">Free</p>
+            <p class="price">Mais detalhes</p>
           </div>
         </div>
       </div>
