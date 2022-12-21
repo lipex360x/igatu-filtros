@@ -2,29 +2,41 @@
 
 <?php get_template_part('src/template-parts/hero/index') ?>
 
-<section class="cards">
-  <div class="container">
+<?php
+    $getFiltros = new WP_Query(array(
+      'post_type' => 'filtro',
+      'posts_per_page' => 3,
+      'orderby' => 'title',
+      'order' => 'ASC',
+    ));
+
+    $request = array(
+      'title' => 'Catálogo de Filtros',
+      'subtitle' => 'Veja todos os Filtros',
+      'url' => '/filtros',
+      'data'=> $getFiltros,
+    );
     
-    <div class="card">
-      <div class="image">
-        <img src="https://i.ytimg.com/vi/GykTLqODQuU/hqdefault.jpg" />
-      </div>
+    ProductSection($request);
 
-      <div class="content">
-        <p class="title description">
-          Formulário Animado com JS puro e CSS Animation | Mayk Brito
-        </p>
+    $getElementos = new WP_Query(array(
+      'post_type' => 'filtro',
+      'posts_per_page' => 3,
+      'orderby' => 'title',
+      'order' => 'ASC',
+    ));
 
-        <div class="details">
-          <p class="duration">57 Min</p>
-          <p class="price">Free</p>
-        </div>
-      </div>
-    </div>
+    $request = array(
+      'title' => 'Catálogo de Elementos Filtrantes',
+      'subtitle' => 'Veja todos os Filtros',
+      'url' => '/filtros',
+      'data'=> $getElementos,
+    );
 
-  </div>
-  
-</section>
+    // ProductSection($request);
 
+    wp_reset_postdata();    
+    
+  ?>
 
 <?php get_footer(); ?>
