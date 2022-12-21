@@ -21672,6 +21672,8 @@ section {
   display: flex;
   flex-direction: column;
   line-height: 2.6rem;
+  gap: 2rem;
+  color: rgb(75, 75, 75);
 }
 .cards .card .content .features {
   display: flex;
@@ -21685,13 +21687,14 @@ section {
 }
 .cards .card .content .details {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
-.cards .card .content .details .price {
+.cards .card .content .details .show {
   background-color: #55a0d9;
   padding: 0.5rem 2rem;
   border-radius: 8px;
+  color: #ffffff;
 }
 
 .header {

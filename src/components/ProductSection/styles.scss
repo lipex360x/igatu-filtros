@@ -81,6 +81,8 @@
       display: flex;
       flex-direction: column;
       line-height: 2.6rem;
+      gap: 2rem;
+      color: $grey;
 
       .features {
         display: flex;
@@ -96,13 +98,14 @@
 
       .details {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: flex-end;
+        align-items: flex-end;
 
-        .price {
+        .show {
           background-color: $blue;
           padding: 0.5rem 2rem;
           border-radius: 8px;
+          color: $white;
           // filter:  brightness(90%);
         }
       }
