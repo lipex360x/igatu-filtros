@@ -1,4 +1,4 @@
-import { CreateFilesProps, generatorHandler, UpdateFileProps } from "../core/handles"
+import { CreateFilesProps, generatorHandler, UpdateFileProps } from "../../core/handles"
 
 export default {
   description: 'Generate Component',

@@ -1,6 +1,6 @@
 import { NodePlopAPI } from 'plop'
-import components from './components'
-import routes from './routes'
+import components from './modules/components'
+import routes from './modules/routes'
 
 export default function (plop: NodePlopAPI) {
   plop.setGenerator('Component', components)
