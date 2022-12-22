@@ -13,7 +13,7 @@ export default {
   ],
 
   actions: () => {
-    const basePath = './components/{{moduleName}}'
+    const basePath = '../generators/modules/{{moduleName}}'
     const templatePath = './core/generator/templates'
 
     const createFiles: CreateFilesProps[] = [
