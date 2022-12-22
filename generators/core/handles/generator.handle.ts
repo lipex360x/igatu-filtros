@@ -1,6 +1,7 @@
 export type CreateFilesProps = {
   path: string
-  templateFile?: string
+  templateFile?: string,
+  force?: boolean
 }
 
 export type UpdateFileProps = {
@@ -16,12 +17,12 @@ type GeneratorHandlerProps = {
 export const generatorHandler = ({createFiles, updateFiles}: GeneratorHandlerProps) => {
   const actions = [] as any
 
-  createFiles.forEach(({ path, templateFile }) => {
+  createFiles.forEach(({ path, templateFile, force = false }) => {
     const createFile = {
       type: 'add',
       path,
       templateFile,
-      force: true,
+      force,
     }
 
     actions.push(createFile)

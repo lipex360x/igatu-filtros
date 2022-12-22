@@ -10,6 +10,15 @@ export default {
       message: 'Module Name',
       validate: (value: string) => (!value ? 'Value is required' : true),
     },
+    {
+      type: 'list',
+      name: 'projectType',
+      message: 'Project Language',
+      choices: () => [
+        { name: 'TS: Node', value: 'ts-node.hbs' },
+        { name: 'PHP', value: 'php.hbs' },
+      ],
+    }, 
   ],
 
   actions: () => {
@@ -19,7 +28,12 @@ export default {
     const createFiles: CreateFilesProps[] = [
       {
         path: `${basePath}/index.ts`,
-        templateFile: `${templatePath}/index.hbs`,
+        templateFile: `${templatePath}/{{projectType}}`,
+        force: true
+      },
+      {
+        path: `${basePath}/templates/index.hbs`,
+        force: true
       }
     ]
 
