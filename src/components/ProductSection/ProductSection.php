@@ -1,7 +1,5 @@
 <?php function ProductSection(Array $params = null) { ?>
 
-<?php //var_dump($params); ?>
-
 <section class="cards">
   <div class="container">
 

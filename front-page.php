@@ -19,23 +19,23 @@
     
     ProductSection($request);
 
-    $getElementos = new WP_Query(array(
-      'post_type' => 'filtro',
-      'posts_per_page' => 3,
-      'orderby' => 'title',
-      'order' => 'ASC',
-    ));
+    // $getElementos = new WP_Query(array(
+    //   'post_type' => 'filtro',
+    //   'posts_per_page' => 3,
+    //   'orderby' => 'title',
+    //   'order' => 'ASC',
+    // ));
 
-    $request = array(
-      'title' => 'Catálogo de Elementos Filtrantes',
-      'subtitle' => 'Veja todos os Filtros',
-      'url' => '/filtros',
-      'data'=> $getElementos,
-    );
+    // $request = array(
+    //   'title' => 'Catálogo de Elementos Filtrantes',
+    //   'subtitle' => 'Veja todos os Filtros',
+    //   'url' => '/filtros',
+    //   'data'=> $getElementos,
+    // );
 
-    // ProductSection($request);
+    // // ProductSection($request);
 
-    wp_reset_postdata();    
+    // wp_reset_postdata();    
     
   ?>
 
