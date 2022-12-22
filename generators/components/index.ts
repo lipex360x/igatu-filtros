@@ -1,3 +1,5 @@
+import { CreateFilesProps, generatorHandler, UpdateFileProps } from "../core/handles"
+
 export default {
   description: 'Generate Component',
 
@@ -14,45 +16,27 @@ export default {
     const basePath = '../src/components/{{componentName}}'
     const templatePath = './components/templates'
 
-    const setFiles = () => {
-      const files = []
-      
-      files.push({
-        type: 'add',
+    const createFiles: CreateFilesProps[] = [
+      {
         path: `${basePath}/index.php`,
         templateFile: `${templatePath}/index.hbs`,
-      })
-
-      files.push({
-        type: 'add',
+      },
+      {
         path: `${basePath}/{{componentName}}.php`,
         templateFile: `${templatePath}/component.hbs`,
-      })
-
-      return files
-    }
-
-    const action = [] as any
-
-    setFiles().forEach(({ path, templateFile }) => {
-      const createFile = {
-        type: 'add',
-        path,
-        templateFile,
-        force: true,
+      },
+      {
+        path: `${basePath}/styles.scss`,
       }
+    ]
 
-      action.push(createFile)
-    })
+    const updateFiles: UpdateFileProps[] = [
+      {
+        path: `${basePath}/../index.php`,
+        template: `require_once('{{componentName}}/index.php');`,
+      }
+    ]
 
-    const updateFile = {
-      type: 'append',
-      path: `${basePath}/../index.php`,
-      template: `require_once('{{componentName}}/index.php');`,
-    }
-
-    action.push(updateFile)
-
-    return action
+    return generatorHandler({createFiles, updateFiles})
   },
 }
