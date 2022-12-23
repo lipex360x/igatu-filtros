@@ -1,9 +1,18 @@
 <?php
-function {{singularName}}PostQueries($query) {
-  if(!is_admin() && $query->is_main_query() && is_post_type_archive('{{singularName}}')) {
-    $query->set('orderby', 'title');
-    $query->set('order', 'ASC');
-    $query->set('posts_per_page', -1);
+class Query{{pascalCase className}} {
+  function __construct() {
+    $this->slug = '{{sanitizedSlug}}';
+
+    add_action('pre_get_posts', array($this, 'setQuery'));
+  }
+
+  function setQuery($query) {
+    if(!is_admin() && $query->is_main_query() && is_post_type_archive($this->slug)) {
+      $query->set('orderby', 'title');
+      $query->set('order', 'ASC');
+      $query->set('posts_per_page', -1);
+    }  
   }
 }
-add_action('pre_get_posts', '{{singularName}}PostQueries');
+
+$query{{pascalCase className}} = new Query{{pascalCase className}};

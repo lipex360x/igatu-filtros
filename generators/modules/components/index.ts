@@ -1,4 +1,4 @@
-import { CreateFilesProps, generatorHandler, UpdateFileProps } from "../../core/handles"
+import { CreateFileProps, generatorHandler, UpdateFileProps } from "../../core/handles"
 
 export default {
   description: 'Generate Component',
@@ -16,7 +16,7 @@ export default {
     const basePath = '../src/components/{{componentName}}'
     const templatePath = './modules/components/templates'
 
-    const createFiles: CreateFilesProps[] = [
+    const createFiles: CreateFileProps[] = [
       {
         path: `${basePath}/index.php`,
         templateFile: `${templatePath}/index.hbs`,

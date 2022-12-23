@@ -1,4 +1,4 @@
-import { CreateFilesProps, generatorHandler } from "../handles"
+import { CreateFileProps, generatorHandler } from "../handles"
 
 export default {
   description: 'New Plop Generator',
@@ -11,6 +11,7 @@ export default {
       validate: (value: string) => (!value ? 'Value is required' : true),
     },
     {
+      when: (response: any) => (!!response.moduleName),
       type: 'list',
       name: 'projectType',
       message: 'Project Language',
@@ -18,14 +19,14 @@ export default {
         { name: 'TS: Node', value: 'ts-node.hbs' },
         { name: 'PHP', value: 'php.hbs' },
       ],
-    }, 
+    },
   ],
 
   actions: () => {
     const basePath = '../generators/modules/{{moduleName}}'
     const templatePath = './core/generator/templates'
 
-    const createFiles: CreateFilesProps[] = [
+    const createFiles: CreateFileProps[] = [
       {
         path: `${basePath}/index.ts`,
         templateFile: `${templatePath}/{{projectType}}`,

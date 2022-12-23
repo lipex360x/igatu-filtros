@@ -1,5 +1,5 @@
 import { PlopGeneratorConfig } from "plop"
-import { CreateFilesProps, generatorHandler, UpdateFileProps } from "../../core/handles"
+import { CreateFileProps, generatorHandler, UpdateFileProps } from "../../core/handles"
 
 export default<PlopGeneratorConfig> {
   description: 'Generate {{moduleName}}',
@@ -17,7 +17,7 @@ export default<PlopGeneratorConfig> {
     const basePath = '../src/'
     const templatePath = './modules/{{moduleName}}/templates'
 
-    const createFiles: CreateFilesProps[] = [
+    const createFiles: CreateFileProps[] = [
       {
         path: `${basePath}/index.ts`,
         templateFile: `${templatePath}/index.hbs`,

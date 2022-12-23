@@ -1,3 +1,5 @@
+import { CreateFileProps, generatorHandler, textTransformHandle, UpdateFileProps } from "../../core/handles";
+
 export default {
   description: 'Generate Custom Post Type',
 
@@ -14,46 +16,81 @@ export default {
       name: 'pluralName',
       message: 'Plural Name',
       validate: (value: string) => (!value ? 'Value is required' : true),
-    }, 
+    },
+    
+    {
+      type: 'input',
+      name: 'slug',
+      message: 'Slug',
+      default: (response: any) => textTransformHandle.sanitize(response.pluralName),
+      validate: (value: string) => (!value ? 'Value is required' : true),
+    },
+
+    {
+      type: 'confirm',
+      name: 'generateArchive',
+      message: 'Generate Archive File?',
+      default: true
+    },
+
+    {
+      type: 'confirm',
+      name: 'generateSingle',
+      message: 'Generate Single File?',
+      default: true
+    },
   ],
 
-  actions: () => {
-    const basePath = '../'
-    const templatePath = './custom-post/templates'
+  actions: (response: any) => {
+    const slug = textTransformHandle.sanitize(response.slug)
+    const basePath = `../src/custom-posts/${slug}`
+    const templatePath = './modules/custom-post/templates/'
 
-    const setFiles = () => {
-      const files = []
-      // TODO: Montar plop para CPT
-      files.push({
-        type: 'add',
+    const templateData = { className: slug, sanitizedSlug: slug }
+
+    const createFiles: CreateFileProps[] = [
+      {
         path: `${basePath}/index.php`,
         templateFile: `${templatePath}/index.hbs`,
-      })
-
-      return files
-    }
-
-    const action = [] as any
-
-    setFiles().forEach(({ path, templateFile }) => {
-      const createFile = {
-        type: 'add',
-        path,
-        templateFile,
         force: true,
+      },
+
+      {
+        path: `${basePath}/register.php`,
+        templateFile: `${templatePath}/register.hbs`,
+        templateData,
+        force: true,
+      },
+
+      {
+        path: `${basePath}/queries.php`,
+        templateFile: `${templatePath}/queries.hbs`,
+        templateData,
+        force: true,
+      },
+
+      {
+        path: `${basePath}/../../../single-${slug}.php`,
+        templateFile: `${templatePath}/single.hbs`,
+        templateData,
+        force: true,
+      },
+
+      {
+        path: `${basePath}/../../../archive-${slug}.php`,
+        templateFile: `${templatePath}/archive.hbs`,
+        templateData,
+        force: true,
+      },
+    ]
+
+    const updateFiles: UpdateFileProps[] = [
+      {
+        path: `${basePath}/../index.php`,
+        template: `require_once('${slug}/index.php');`,
       }
+    ]
 
-      action.push(createFile)
-    })
-
-    const updateFile = {
-      type: 'append',
-      path: `${basePath}/../index.php`,
-      template: `require_once('{{componentName}}/index.php');`,
-    }
-
-    action.push(updateFile)
-
-    return action
+    return generatorHandler({createFiles, updateFiles});
   },
 }

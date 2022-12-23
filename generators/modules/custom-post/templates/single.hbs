@@ -1,17 +1,7 @@
 <?php get_header(); ?>
 
-<?php PageBanner(); ?>
-
-<?php while(have_posts()): the_post(); ?>
-
-<div class="container container--narrow page-section">
-  <div class="generic-content">
-    <div class="row group">
-      <h2>{{singularName}} Single</h2>
-    </div>
-  </div>
+<div class="container">
+  <h2>Single {{pascalCase className}}</h2>
 </div>
-
-<?php endwhile; ?>
 
 <?php get_footer(); ?>

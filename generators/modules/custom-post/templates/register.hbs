@@ -1,19 +1,31 @@
 <?php
-function {{singularName}}PostType() {
-  register_post_type('{{singularName}}', array(
-    'rewrite' => array('slug' => '{{pluralName}}'),
-    'has_archive' => true,
-    'public' => true,
-    'menu_icon' => 'dashicons-star-empty',
-    'show_in_rest' => true,
-    'supports' => array('title', 'editor', 'thumbnail'),
-    'labels' => array(
-      'name' => '{{pascalCase singularName}}',
-      'sigular_name' => '{{pascalCase singularName}}',
-      'add_new_item' => 'Add New {{pascalCase singularName}}',
-      'edit_item' => 'Edit {{pascalCase singularName}}',
-      'all_items' => 'All {{pascalCase pluralName}}',
-    )
-  ));
+class Register{{pascalCase className}} {
+  function __construct() {
+    $this->slug = '{{sanitizedSlug}}';
+    $this->singularName = '{{singularName}}';
+    $this->pluralName = '{{pluralName}}';
+    $this->menuIcon = 'dashicons-star-empty';
+
+    add_action('init', array($this, 'register'));
+  }
+
+  function register() {
+    register_post_type($this->slug, array(
+      'rewrite' => array('slug' => $this->slug),
+      'has_archive' => true,
+      'public' => true,
+      'menu_icon' => $this->menuIcon,
+      'show_in_rest' => true,
+      'supports' => array('title'),
+      'labels' => array(
+        'name' => $this->pluralName,
+        'sigular_name' => $this->singularName,
+        'add_new_item' => "Add New {$this->singularName}",
+        'edit_item' => "Edit {$this->singularName}",
+        'all_items' => "All {$this->pluralName}",
+      )
+    ));
+  }
 }
-add_action('init', '{{singularName}}PostType');
+
+$register{{pascalCase className}} = new Register{{pascalCase className}}();
