@@ -10,8 +10,7 @@ class RegisterFiltro {
   }
 
   function register() {
-    register_post_type($this->singularName, array(
-      'rewrite' => array('slug' => $this->slug),
+    register_post_type($this->slug, array(
       'has_archive' => true,
       'public' => true,
       'menu_icon' => $this->menuIcon,

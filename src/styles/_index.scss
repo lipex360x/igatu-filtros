@@ -1,6 +1,8 @@
 @import "normalize.css";
+@import "phosphor-icons/src/css/icons.css";
 @import "@fontsource/source-sans-pro/index.css";
 
-@import "phosphor-icons/src/css/icons.css";
-
+@import 'base/index';
 @import 'components/index';
+@import 'archives/index';
+@import 'singles/index';

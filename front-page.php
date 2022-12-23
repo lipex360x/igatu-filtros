@@ -4,7 +4,7 @@
 
 <?php
     $getFiltros = new WP_Query(array(
-      'post_type' => 'filtro',
+      'post_type' => 'filtros',
       'posts_per_page' => 3,
       'orderby' => 'title',
       'order' => 'ASC',
@@ -13,7 +13,6 @@
     $request = array(
       'title' => 'Catálogo de Filtros',
       'subtitle' => 'Veja todos os Filtros',
-      'url' => '/filtros',
       'data'=> $getFiltros,
     );
     

@@ -11,7 +11,7 @@ class Register{{pascalCase className}} {
 
   function register() {
     register_post_type($this->slug, array(
-      'rewrite' => array('slug' => $this->slug),
+      // 'rewrite' => array('slug' => $this->slug),
       'has_archive' => true,
       'public' => true,
       'menu_icon' => $this->menuIcon,
