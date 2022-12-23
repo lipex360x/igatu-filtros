@@ -1,6 +1,7 @@
+import { PlopGeneratorConfig } from "plop";
 import { CreateFileProps, generatorHandler, textTransformHandle, UpdateFileProps } from "../../core/handles";
 
-export default {
+export default<PlopGeneratorConfig> {
   description: 'Generate Custom Post Type',
 
   prompts: [
@@ -51,36 +52,31 @@ export default {
     const createFiles: CreateFileProps[] = [
       {
         path: `${basePath}/index.php`,
-        templateFile: `${templatePath}/index.hbs`,
-        force: true,
+        templateFile: `${templatePath}/index.hbs`
       },
 
       {
         path: `${basePath}/register.php`,
         templateFile: `${templatePath}/register.hbs`,
-        templateData,
-        force: true,
+        templateData
       },
 
       {
         path: `${basePath}/queries.php`,
         templateFile: `${templatePath}/queries.hbs`,
-        templateData,
-        force: true,
+        templateData
       },
 
       {
         path: `${basePath}/../../../single-${slug}.php`,
         templateFile: `${templatePath}/single.hbs`,
-        templateData,
-        force: true,
+        templateData
       },
 
       {
         path: `${basePath}/../../../archive-${slug}.php`,
         templateFile: `${templatePath}/archive.hbs`,
-        templateData,
-        force: true,
+        templateData
       },
     ]
 

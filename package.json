@@ -6,7 +6,7 @@
   "scripts": {
     "build": "wp-scripts build",
     "dev": "wp-scripts start",
-    "pregen": "tsup generators/plopfile.ts --format esm,cjs --dts --outDir .plop && copyfiles -u 1 generators/**/*.hbs .plop ",
+    "pregen": "tsup generators/plopfile.ts --format esm --outDir .plop && copyfiles -u 1 generators/**/*.hbs .plop",
     "gen": "plop --plopfile .plop/plopfile.mjs"
   },
   "dependencies": {

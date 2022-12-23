@@ -1,6 +1,7 @@
+import { PlopGeneratorConfig } from "plop"
 import { CreateFileProps, generatorHandler, UpdateFileProps } from "../../core/handles"
 
-export default {
+export default<PlopGeneratorConfig> {
   description: 'Generate Component',
 
   prompts: [

@@ -1,4 +1,7 @@
-export default {
+import { PlopGeneratorConfig } from "plop"
+import { CreateFileProps, generatorHandler, UpdateFileProps } from "../../core/handles"
+
+export default<PlopGeneratorConfig> {
   description: 'Generate Route',
 
   prompts: [
@@ -24,41 +27,22 @@ export default {
 
   actions: () => {
     const basePath = '../src/routes'
-    const templatePath = './routes/templates'
+    const templatePath = './modules/routes/templates'
 
-    const setFiles = () => {
-      const files = []
-      
-      files.push({
-        type: 'add',
+    const createFiles: CreateFileProps[] = [
+      {
         path: `${basePath}/{{componentName}}.route.php`,
         templateFile: `${templatePath}/route.hbs`,
-      })
-
-      return files
-    }
-
-    const action = [] as any
-
-    setFiles().forEach(({ path, templateFile }) => {
-      const createFile = {
-        type: 'add',
-        path,
-        templateFile,
-        force: false,
       }
+    ]
 
-      action.push(createFile)
-    })
+    const updateFiles: UpdateFileProps[] = [
+      {
+        path: `${basePath}/index.php`,
+        template: `require_once('{{componentName}}.route.php');`,
+      }
+    ]
 
-    const updateFile = {
-      type: 'append',
-      path: `${basePath}/index.php`,
-      template: `require_once('{{componentName}}.route.php');`,
-    }
-
-    action.push(updateFile)
-
-    return action
+    return generatorHandler({createFiles, updateFiles});
   },
 }
