@@ -37,7 +37,7 @@ export default<PlopGeneratorConfig> {
         template: `require_once('{{componentName}}/index.php');`,
       },
       {
-        path: `${basePath}/../_index.scss`,
+        path: `${basePath}/../styles.scss`,
         template: `@import '{{componentName}}/styles';`,
       }
     ]
