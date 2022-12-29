@@ -1,3 +1,2 @@
 import "./scripts/index"
-
-import "./_index.scss"
+import "./styles.scss"
