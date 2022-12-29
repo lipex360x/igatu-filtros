@@ -24,8 +24,10 @@
         <span>
           <?php ArrowsVerticalIcon() ?> altura: <?= get_field('dimensoes')['altura']?> mm
         </span>
-        
-        <span><i class="ph-barbell-light"></i>peso: <?= get_field('dimensoes')['peso']?> kg</span>
+
+        <span>
+          <?php BarbellIcon() ?> peso: <?= get_field('dimensoes')['peso']?> kg
+        </span>
       </div>
       
       <div class="details">
