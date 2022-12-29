@@ -23,33 +23,18 @@
     ]
   },
 
-  "Create Route": {
-    "prefix": "createRoute",
+  "Add Icon": {
+    "prefix": "addIcon",
     "body": [
       "<?php",
-      "class ${1:NAME}Route {",
-      "  function __construct() {",
-      "    \\$this->route = '${2:ROUTE}';",
+      "  function ${1:NAME}Icon(\\$args = null) {",
+      "    \\$icon = '${2:ICON}';",
       "",
-      "    add_action('rest_api_init', array(\\$this, 'registerRoute'));",
+      "    SvgIcon(array('icon' => \\$icon));",
       "  }",
-      "",
-      "  function execute(\\$request) {",
-      "    return 'Hello Route';",
-      "  }",
-      "",
-      "  function registerRoute() {",
-      "    \\$rest_params = array(",
-      "      'methods'   => WP_REST_Server::${3|READABLE,CREATABLE,EDITABLE,DELETABLE|},",
-      "      'callback'  => array(\\$this, 'execute'),",
-      "    );",
-      "    register_rest_route('university/v1', \\$this->route, array(\\$rest_params));",
-      "  }",
-      "}",
-      "",
-      "\\$registerRoute = new ${1:NAME}Route();",
       ""
     ]
   },
+  
   
 }

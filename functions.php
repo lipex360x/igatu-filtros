@@ -14,6 +14,10 @@ require_once get_theme_file_path('/src/scripts/index.php');
 // CUSTOM POST TYPES
 require_once get_theme_file_path('/src/custom-posts/index.php');
 
+// ICONS
+require_once get_theme_file_path('/src/assets/icons/index.php');
+
+
 // FEATURES: Theme Supports
 function themeFeatures() {
   add_theme_support('title-tag');

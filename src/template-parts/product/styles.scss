@@ -37,6 +37,9 @@
     gap: 2rem;
     color: $grey;
 
+    svg {
+      color: $grey;
+    }
     .features {
       display: flex;
       flex-direction: column;

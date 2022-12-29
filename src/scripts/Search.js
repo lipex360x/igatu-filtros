@@ -48,6 +48,7 @@ export default class Search {
   }
 
   openOverlay = () => {
+    console.log('hdldldl')
     this.showOverlay = true
 
     document.body.style.overflow = 'hidden'

@@ -30,8 +30,8 @@
             <a href="#">Fale Conosco</a>
           </li>
           <li>
-            <a href="javascript:void(0)" class="search-toggle">
-              <i class="ph-magnifying-glass"></i>
+            <a href="javascript:void(0)" class="search-toggle" style="color: blue">
+              <?php SearchIcon(array('color' => 'red')) ?>
             </a>
           </li>
         </ul>

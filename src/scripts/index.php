@@ -1,8 +1,6 @@
 <?php
 function themeScripts() {
   $themeScripts = 'theme-main-scripts';
-
-  wp_register_script($themeScripts, 'https://unpkg.com/phosphor-icons', null, null, true);
   
   wp_localize_script($themeScripts, 'themeData', array('root_url' => get_site_url()));
 

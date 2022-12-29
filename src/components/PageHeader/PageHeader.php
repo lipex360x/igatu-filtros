@@ -1,13 +1,12 @@
-<?php function PageHeader($args = null) { ?>
+<?php 
+  function PageHeader($args = null) {  
+    if(!isset($args['title'])) $args['title'] = get_the_title();
+    if(!isset($args['subtitle'])) $args['subtitle'] = get_field('page_banner_subtitle');
 
-  <?php 
-  if(!isset($args['title'])) $args['title'] = get_the_title();
-  if(!isset($args['subtitle'])) $args['subtitle'] = get_field('page_banner_subtitle');
-
-  if(!isset($args['photo'])) {
-    $args['photo'] = (get_field('page_banner_background_image') && !is_archive() && !is_home())
-      ? get_field('page_banner_background_image')['sizes']['pageBanner']
-      : get_theme_file_uri('src/assets/ocean.jpg');
+    if(!isset($args['photo'])) {
+      $args['photo'] = (get_field('page_banner_background_image') && !is_archive() && !is_home())
+        ? get_field('page_banner_background_image')['sizes']['pageBanner']
+        : get_theme_file_uri('src/assets/ocean.jpg');
     }
   ?>
 
