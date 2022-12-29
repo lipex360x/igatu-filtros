@@ -15,7 +15,7 @@ export default<PlopGeneratorConfig> {
 
   actions: () => {
     const basePath = '../src/'
-    const templatePath = './modules/{{moduleName}}/templates'
+    const templatePath = './modules/{{sanitizedSlug}}/templates'
 
     const createFiles: CreateFileProps[] = [
       {

@@ -2,32 +2,32 @@ import { PlopGeneratorConfig } from "plop"
 import { CreateFileProps, generatorHandler, UpdateFileProps } from "../../core/handles"
 
 export default<PlopGeneratorConfig> {
-  description: 'Generate {{moduleName}}',
+  description: 'Generate SVGIcon',
 
   prompts: [
     {
       type: 'input',
       name: 'componentName',
-      message: 'Component Name',
+      message: 'Icon Name',
       validate: (value: string) => (!value ? 'Value is required' : true),
     },
   ],
 
   actions: () => {
-    const basePath = '../src/'
-    const templatePath = './modules/{{sanitizedSlug}}/templates'
+    const basePath = '../src/assets/icons'
+    const templatePath = './modules/svgicon/templates'
 
     const createFiles: CreateFileProps[] = [
       {
-        path: `${basePath}/index.php`,
+        path: `${basePath}/{{componentName}}Icon.php`,
         templateFile: `${templatePath}/index.hbs`,
       },
     ]
 
     const updateFiles: UpdateFileProps[] = [
       {
-        path: `${basePath}/../index.php`,
-        template: `require_once('{{componentName}}/index.php');`,
+        path: `${basePath}/index.php`,
+        template: `require_once('{{componentName}}Icon.php');`,
       }
     ]
 

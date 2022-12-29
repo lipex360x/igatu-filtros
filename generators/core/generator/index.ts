@@ -1,4 +1,4 @@
-import { CreateFileProps, generatorHandler } from "../handles"
+import { CreateFileProps, generatorHandler, textTransformHandle } from "../handles"
 
 export default {
   description: 'New Plop Generator',
@@ -22,15 +22,18 @@ export default {
     },
   ],
 
-  actions: () => {
-    const basePath = '../generators/modules/{{moduleName}}'
+  actions: (response: any) => {
+    const slug = textTransformHandle.sanitize(response.moduleName)
+    const basePath = `../generators/modules/${slug}`
     const templatePath = './core/generator/templates'
+    const templateData = { sanitizedSlug: slug }
 
     const createFiles: CreateFileProps[] = [
       {
         path: `${basePath}/index.ts`,
         templateFile: `${templatePath}/{{projectType}}`,
-        force: true
+        templateData,
+        force: true,
       },
       {
         path: `${basePath}/templates/index.hbs`,

@@ -21,7 +21,10 @@
           <?php ArrowsHorizontalIcon() ?> diâmetro: <?= get_field('dimensoes')['diametro']?> mm
         </span>
 
-        <span><i class="ph-arrows-vertical"></i> altura: <?= get_field('dimensoes')['altura']?> mm</span>
+        <span>
+          <?php ArrowsVerticalIcon() ?> altura: <?= get_field('dimensoes')['altura']?> mm
+        </span>
+        
         <span><i class="ph-barbell-light"></i>peso: <?= get_field('dimensoes')['peso']?> kg</span>
       </div>
       

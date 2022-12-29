@@ -4,6 +4,7 @@
 
     SvgIcon(array(
       'width' => 16,
+      'height' => 16,
       'viewBox' => '15 0 240 200',
       'icon' => $icon
     ));
