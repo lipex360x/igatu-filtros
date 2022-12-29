@@ -65,20 +65,20 @@ export default<PlopGeneratorConfig> {
         path: `${basePath}/queries.php`,
         templateFile: `${templatePath}/queries.hbs`,
         templateData
-      },
-
-      {
-        path: `${basePath}/../../../single-${slug}.php`,
-        templateFile: `${templatePath}/single.hbs`,
-        templateData
-      },
-
-      {
-        path: `${basePath}/../../../archive-${slug}.php`,
-        templateFile: `${templatePath}/archive.hbs`,
-        templateData
-      },
+      }
     ]
+
+    response.generateArchive ?? createFiles.push({
+      path: `${basePath}/../../../single-${slug}.php`,
+      templateFile: `${templatePath}/single.hbs`,
+      templateData
+    })
+
+    response.generateSingle ?? createFiles.push({
+      path: `${basePath}/../../../archive-${slug}.php`,
+      templateFile: `${templatePath}/archive.hbs`,
+      templateData
+    })
 
     const updateFiles: UpdateFileProps[] = [
       {

@@ -1,3 +1,9 @@
+<?php 
+  // foreach (get_field('filtro_imagens')as $image) {
+  //   var_dump($image['sizes']['large']);
+  // }
+?>
+
 <a href="<?php the_permalink() ?>">
   <div class="product-card">
     <div class="image">
