@@ -33,12 +33,12 @@
       }
 
       a {
-        color: $blueDark;
+        color: $darkBlue;
       }
     }
   }
 
-  @include onMobile {
+  @include onTablet {
     padding: 1.6rem 0;
 
     img {
@@ -55,7 +55,7 @@
       .one,
       .two,
       .three {
-        background-color: $blueDark;
+        background-color: $darkBlue;
         height: 3px;
         width: 100%;
         border-radius: 6px;
@@ -73,7 +73,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: $blueDark;
+        background-color: $darkBlue;
         
         display: flex;
         justify-content: center;

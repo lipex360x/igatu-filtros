@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="spacing hero">
   <div class="container">
     <div class="content">
       <h2><?= get_field('hero_titulo') ?></h2>

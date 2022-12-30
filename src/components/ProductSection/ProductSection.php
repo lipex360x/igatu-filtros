@@ -4,7 +4,7 @@
     $postLink = get_post_type_archive_link($postType);
 ?>
 
-<section class="cards">
+<section class="spacing cards">
   <div class="container">
 
     <header class="header-cards">

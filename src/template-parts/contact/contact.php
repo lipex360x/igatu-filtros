@@ -1,4 +1,4 @@
-<section>
+<section class="spacing">
 
   <div>
       <h3>Fale Conosco</h3>

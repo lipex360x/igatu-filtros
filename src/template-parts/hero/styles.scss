@@ -3,7 +3,7 @@
     justify-content: space-between;
     gap: 2rem;
 
-    @include onMobile {
+    @include onTablet {
       flex-direction: column;
       text-align: center;
       align-items: center;
@@ -43,7 +43,7 @@
       line-height: 2.6rem;
     }
 
-    @include onMobile {
+    @include onTablet {
       margin-top: 4rem;
       align-items: center;
 

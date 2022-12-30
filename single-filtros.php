@@ -6,7 +6,7 @@
 
   <div class="container">
 
-    <?php get_template_part('src/template-parts/product/content', 'filtros') ?>
+    <?php get_template_part('src/template-parts/product/show', 'filtro') ?>
 
   </div>
 
