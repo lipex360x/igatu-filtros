@@ -27,16 +27,20 @@ export default<PlopGeneratorConfig> {
 
     const createFiles: CreateFileProps[] = [
       {
-        path: `${basePath}/index.php`,
+        path: `${basePath}/${slug}.php`,
         templateFile: `${templatePath}/index.hbs`,
         templateData
+      },
+
+      {
+        path: `${basePath}/styles.scss`,
       },
     ]
 
     const updateFiles: UpdateFileProps[] = [
       {
-        path: `${basePath}/../index.php`,
-        template: `require_once('/index.php');`,
+        path: `${basePath}/../styles.scss`,
+        template: `@import "${slug}/styles";`,
       }
     ]
 
