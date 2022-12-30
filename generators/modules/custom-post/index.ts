@@ -47,7 +47,7 @@ export default<PlopGeneratorConfig> {
     const basePath = `../src/custom-posts/${slug}`
     const templatePath = './modules/custom-post/templates/'
 
-    const templateData = { className: slug, sanitizedSlug: slug }
+    const templateData = { slug }
 
     const createFiles: CreateFileProps[] = [
       {

@@ -1,7 +1,7 @@
 <?php
-class Query{{pascalCase className}} {
+class Query{{pascalCase slug}} {
   function __construct() {
-    $this->slug = '{{sanitizedSlug}}';
+    $this->slug = '{{slug}}';
 
     add_action('pre_get_posts', array($this, 'setQuery'));
   }
@@ -15,4 +15,4 @@ class Query{{pascalCase className}} {
   }
 }
 
-$query{{pascalCase className}} = new Query{{pascalCase className}};
+$query{{pascalCase slug}} = new Query{{pascalCase slug}};

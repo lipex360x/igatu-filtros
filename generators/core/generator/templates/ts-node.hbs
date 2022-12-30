@@ -1,5 +1,10 @@
 import { PlopGeneratorConfig } from "plop"
-import { CreateFileProps, generatorHandler, UpdateFileProps } from "../../core/handles"
+import { 
+  CreateFileProps, 
+  generatorHandler, 
+  textTransformHandle, 
+  UpdateFileProps 
+} from "@gen/core/handles"
 
 export default<PlopGeneratorConfig> {
   description: 'Generate {{moduleName}}',
@@ -13,14 +18,18 @@ export default<PlopGeneratorConfig> {
     },
   ],
 
-  actions: () => {
+  actions: (response: any) => {
+    const slug = textTransformHandle.sanitize(response.componentName)
     const basePath = '../src/'
-    const templatePath = './modules/{{sanitizedSlug}}/templates'
+    const templatePath = './modules/{{slug}}/templates'
+
+    const templateData = { slug }
 
     const createFiles: CreateFileProps[] = [
       {
         path: `${basePath}/index.ts`,
         templateFile: `${templatePath}/index.hbs`,
+        templateData
       },
     ]
 

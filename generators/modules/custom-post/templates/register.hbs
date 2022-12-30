@@ -1,7 +1,7 @@
 <?php
-class Register{{pascalCase className}} {
+class Register{{pascalCase slug}} {
   function __construct() {
-    $this->slug = '{{sanitizedSlug}}';
+    $this->slug = '{{slug}}';
     $this->singularName = '{{singularName}}';
     $this->pluralName = '{{pluralName}}';
     $this->menuIcon = 'dashicons-star-empty';
@@ -28,4 +28,4 @@ class Register{{pascalCase className}} {
   }
 }
 
-$register{{pascalCase className}} = new Register{{pascalCase className}}();
+$register{{pascalCase slug}} = new Register{{pascalCase slug}}();

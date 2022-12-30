@@ -7,21 +7,21 @@ import {
 } from "@gen/core/handles"
 
 export default<PlopGeneratorConfig> {
-  description: 'Generate {{moduleName}}',
+  description: 'Generate template-parts',
 
   prompts: [
     {
       type: 'input',
       name: 'componentName',
-      message: 'Component Name',
+      message: 'Template Part Name',
       validate: (value: string) => (!value ? 'Value is required' : true),
     },
   ],
 
   actions: (response: any) => {
     const slug = textTransformHandle.sanitize(response.componentName)
-    const basePath = '../src/'
-    const templatePath = './modules/{{slug}}/templates'
+    const basePath = `../src/template-parts/${slug}`
+    const templatePath = './modules/template-parts/templates'
 
     const templateData = { slug }
 
@@ -36,7 +36,7 @@ export default<PlopGeneratorConfig> {
     const updateFiles: UpdateFileProps[] = [
       {
         path: `${basePath}/../index.php`,
-        template: `require_once('{{componentName}}/index.php');`,
+        template: `require_once('/index.php');`,
       }
     ]
 

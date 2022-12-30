@@ -26,7 +26,8 @@ export default {
     const slug = textTransformHandle.sanitize(response.moduleName)
     const basePath = `../generators/modules/${slug}`
     const templatePath = './core/generator/templates'
-    const templateData = { sanitizedSlug: slug }
+    
+    const templateData = { slug }
 
     const createFiles: CreateFileProps[] = [
       {
