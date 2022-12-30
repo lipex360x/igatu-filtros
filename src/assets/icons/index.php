@@ -5,3 +5,5 @@ require_once('BatteryIcon.php');
 require_once('SearchIcon.php');
 require_once('ArrowsVerticalIcon.php');
 require_once('BarbellIcon.php');
+require_once('QrCodeIcon.php');
+require_once('CardsIcon.php');

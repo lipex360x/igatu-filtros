@@ -4,12 +4,19 @@
     $postLink = get_post_type_archive_link($postType);
 ?>
 
-<section class="spacing cards">
+<section class="cards">
   <div class="container">
 
     <header class="header-cards">
-      <h2><i class="ph-qr-code"></i> <?= $params['title']; ?></h2>
-      <a href="<?= $postLink ?>"><i class="ph-target"></i> <?= $params['subtitle'] ?></a>
+      <h2>
+        <?php QrCodeIcon(); echo $params['title']; ?>
+      </h2>
+
+      <?php if(isset($params['subtitle'])) : ?>
+        <a href="<?= $postLink ?>">
+          <?php CardsIcon(); echo $params['subtitle'] ?>
+        </a>
+      <?php endif ?>
     </header>
     
     <div class="section-cards">
