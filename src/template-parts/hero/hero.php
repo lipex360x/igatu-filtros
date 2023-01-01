@@ -8,7 +8,7 @@
     
     <img
       src="<?= get_field('hero_imagem')['sizes']['large'] ?>"
-      alt="filtro igatu"
+      alt="<?= get_field('hero_imagem')['alt']?>"
     />
   </div>
 </section>
