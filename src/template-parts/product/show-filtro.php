@@ -1,3 +1,7 @@
+<?php
+  var_dump(get_field('temperatura'));
+?>
+
 <section class="spacing show-filter">
   <div class="container">
     <div class="images">
@@ -15,76 +19,107 @@
     </div>
 
     <div class="content">
-      <p>
-        <?= get_field('descricao') ?>
-      </p>
+      <p><?= get_field('descricao') ?></p>
 
       <h2>Características</h2>
       <table>
         <tbody>
           <tr>
             <td>Modelo</td>
-            <td>IGATU 446</td>
+            <td><?= get_field('modelo') ?></td>
           </tr>
 
           <tr>
-            <td>Código</td>
-            <td>446FCBR</td>
-          </tr>								
-
-          <tr>
-            <td>Classificação</td>
-            <td>Aparelho por pressão</td>
-          </tr>
-
-          <tr>
-            <td>Local de instalação</td>
-            <td>POU (Ponto de uso)</td>
+            <td rolspan=2>Código</td>
+            <td><?= get_field('modelo') ?></td>
           </tr>
 
           <tr>
             <td>Composição básica</td>
-            <td>Polipropileno (atóxico)</td>
+            <td><?= get_field('composicao') ?></td>
+          </tr>
+          
+          <tr>
+            <td>Classificação</td>
+            <td>
+              <table class="borderless">
+                <tr>
+                  <td>Tipo: <?= get_field('classificacao')['tipo'] ?></td>
+                </tr>
+                <tr>
+                  <td>Local de Instalação: <?= get_field('instalacao') ?></td>
+                </tr>
+              </table>
+            </td>
           </tr>
 
           <tr>
-            <td>Vazão nominal</td>
-            <td>200 litros/hora</td>
-          </tr>
-
-          <tr>
-            <td>Vazão máxima recomendada</td>
-            <td>200 litros/hora</td>
+            <td>Vazão</td>
+            <td>
+              <table class="borderless">
+                <tr>
+                  <td>Nominal: <?= get_field('vazao')['nominal'] ?> litros / hora</td>
+                </tr>
+                <tr>
+                  <td>Máxima*: <?= get_field('vazao')['maxima'] ?> litros / hora</td>
+                </tr>
+              </table>
+            </td>
           </tr>
 
           <tr>
             <td>Pressão de operação</td>
-            <td>Máx.: 600 kPa || Mín.: 29 kPa</td>
+            <td>
+              <table class="borderless">
+                <tr>
+                  <td>Máxima: <?= get_field('pressao')['maxima'] ?> kPa</td>
+                </tr>
+                <tr>
+                  <td>Mínima: <?= get_field('pressao')['minima'] ?> kPa</td>
+                </tr>
+              </table>
+            </td>
           </tr>
-          
+
           <tr>
             <td>Temperatura de operação</td>
-            <td>Máx.: 42 ºC || Mín.: 2 ºC</td>
+            <td>
+              <table class="borderless">
+                <tr>
+                  <td>Máxima: <?= get_field('temperatura')['maxima'] ?> ºC</td>
+                </tr>
+                <tr>
+                  <td>Mínima: <?= get_field('temperatura')['minima'] ?> ºC</td>
+                </tr>
+              </table>
+            </td>
           </tr>
 
-					<tr>
-            <td>Diâmetro</td>
-            <td>114 mm</td>
+          <tr>
+            <td>Dimensões</td>
+            <td>
+              <table class="borderless">
+                <tr>
+                  <td>Diâmetro: <?= get_field('dimensoes')['diametro'] ?> mm</td>
+                </tr>
+                <tr>
+                  <td>Altura: <?= get_field('dimensoes')['altura'] ?> mm</td>
+                </tr>
+                <tr>
+                  <td>Peso**: <?= get_field('dimensoes')['peso'] ?> kg</td>
+                </tr>
+              </table>
+            </td>
           </tr>
-								
-					<tr>
-						<td>Altura</td>
-						<td>222 mm</td>
-					<tr>
 
-					<tr>
-            <td>Peso</td>
-            <td>0,705 kg</td>
+          <tr>
+            <td>Conexões de Entrada e Saída</td>
+            <td><?= get_field('conexoes') ?>"</td>
           </tr>
-								
+
           <tr>
             <td>Modelos equivalentes</td>
-            <td>Linha 200, AP200, WP200</td>
+            <td><?= get_field('modelos_equivalentes') ?></td>
           </tr>
 	
         </tbody>

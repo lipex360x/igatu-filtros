@@ -13,8 +13,7 @@
     "@fontsource/source-sans-pro": "^4.5.11",
     "@wordpress/scripts": "^25.0.0",
     "axios": "^1.2.1",
-    "normalize.css": "^8.0.1",
-    "phosphor-icons": "^1.4.2"
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "copyfiles": "^2.4.1",
