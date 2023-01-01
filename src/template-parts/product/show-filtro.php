@@ -6,10 +6,10 @@
     />
 
     <?php if(get_field('selo_inmetro')) : ?>
-    <img
-      src="<?= get_field('selo_inmetro')['sizes']['large'] ?>"
-      alt="<?= get_field('product_image')['title'] ?>"
-    />
+      <img
+        src="<?= get_field('selo_inmetro')['sizes']['large'] ?>"
+        alt="<?= get_field('product_image')['title'] ?>"
+      />
     <?php endif; ?>
   </div>
 

@@ -1,4 +1,4 @@
-<section>
+<div>
   <a href="<?php the_permalink() ?>">
     <div class="product-card">
       <div class="image">
@@ -31,4 +31,4 @@
       </div>
     </div>
   </a>
-</section>
+</div>

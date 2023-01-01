@@ -2,7 +2,7 @@
 
 <?php PageHeader(array('title' => 'Catálogo de Filtros')); ?>
 
-<div class="archive container">
+<div class="archive container grid gap-base spacing-top-5xl">
 
   <?php while(have_posts()) : the_post(); ?>
   

@@ -4,6 +4,7 @@
   flex-direction: column;
   background-color: $lightBlue;
   border-radius: 8px;
+  height: 100%;
 
   transition: all 0.2s ease 0s;
 
@@ -34,8 +35,12 @@
     display: flex;
     flex-direction: column;
     line-height: 2.6rem;
-    gap: 2rem;
+    gap: 1rem;
     color: $grey;
+
+    h3 {
+      height: 5rem;
+    }
 
     svg {
       color: $grey;
