@@ -3,15 +3,12 @@
   $relatedItems = $params['data'];
 ?>
 
-<section class="related-section">
-  <div class="container">
-
-  <header class="header-container">
+<section class="related-section container flex-column">
+  <header>
     <h2><?php QrCodeIcon(); echo $params['title']; ?></h2>
   </header>
 
-  <ul class="related-items">
-
+  <ul>
     <?php foreach ($relatedItems as $item) : ?>
       
       <li>
@@ -22,10 +19,8 @@
       </li>
     
     <?php endforeach ?>
-
   </ul>
-
-  </div>
+  
 </section>
 
 <?php } ?>
