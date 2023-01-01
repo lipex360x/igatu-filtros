@@ -1,12 +1,6 @@
 .header {
-  // background: green;
   padding: 0.5rem 0;
   box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.2);
-
-  .container {
-    justify-content: space-between;
-    align-items: center;
-  }
 
   img {
     width: 70px;
@@ -14,8 +8,9 @@
 
   nav ul {
     display: flex;
-    height: 100%;
     align-items: center;
+    
+    height: 100%;
     font-size: 1.4rem;
     gap: 2rem;
     

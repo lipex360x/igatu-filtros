@@ -9,7 +9,7 @@
 
   if($relatedElements) {
     RelatedItem(array(
-      'title' => 'Elementos Relacionados',
+      'title' => 'Itens Relacionados',
       'data' => $relatedElements,
     ));
   }

@@ -1,5 +1,5 @@
 <header class="header">
-  <div class="container">
+  <div class="container align-center justify-between">
     <a href="<?= site_url() ?>">
     <img
       src="<?= get_theme_file_uri('src/assets/logomarca.jpg')?>"

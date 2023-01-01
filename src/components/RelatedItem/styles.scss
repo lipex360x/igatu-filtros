@@ -1,17 +1,16 @@
 .related-section {
+
   ul {
-    display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
-    gap: 2rem;
     
     @include onTablet {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
     
     a {
+      @extend .flex, .flex-column;
+
       position: relative;
-      display: flex;
-      flex-direction: column;
       overflow: hidden;
       color: $white;
       

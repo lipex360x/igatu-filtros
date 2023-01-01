@@ -5,16 +5,16 @@
 
 <section class="related-section container flex-column">
   <header>
-    <h2><?php QrCodeIcon(); echo $params['title']; ?></h2>
+    <h2><?php HandsIcon(); echo $params['title']; ?></h2>
   </header>
 
-  <ul>
+  <ul class="grid gap-base">
     <?php foreach ($relatedItems as $item) : ?>
       
       <li>
-        <a href="<?= get_the_permalink($item) ?>">
+        <a href="<?= get_the_permalink($item) ?>" title="<?= get_the_title($item, $item->ID) ?>">
           <img src="<?= get_field('product_image', $item->ID)['sizes']['medium']?>" alt="">
-          <span><?= get_the_title($item, $item->ID) ?></span>
+          <span><?= wp_trim_words(get_the_title($item, $item->ID), 6) ?></span>
         </a>
       </li>
     

@@ -1,6 +1,5 @@
-<section class="hero">
-
-  <div class="content">
+<section class="hero container gap-base justify-between spacing-top-5xl">
+  <div class="content flex flex-column justify-center gap-base">
     <h2><?= get_field('hero_titulo') ?></h2>
     <?= get_field('hero_subtitulo') ?>
     <a href="#" class="button">Quero saber mais!</a>

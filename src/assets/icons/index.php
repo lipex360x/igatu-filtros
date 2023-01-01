@@ -7,3 +7,4 @@ require_once('ArrowsVerticalIcon.php');
 require_once('BarbellIcon.php');
 require_once('QrCodeIcon.php');
 require_once('CardsIcon.php');
+require_once('HandsIcon.php');

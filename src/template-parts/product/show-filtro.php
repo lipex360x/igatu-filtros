@@ -1,4 +1,4 @@
-<section class="container spacing-top show">
+<section class="show container grid spacing-top-5xl">
   <div class="images">
     <img
       src="<?= get_field('product_image')['sizes']['large'] ?>"
@@ -14,7 +14,7 @@
   </div>
 
   <div class="content">
-    <p><?= get_field('descricao') ?></p>
+    <p class="font-lg"><?= get_field('descricao') ?></p>
 
     <h2>Características</h2>
     <table>

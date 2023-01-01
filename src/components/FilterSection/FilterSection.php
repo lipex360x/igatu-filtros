@@ -18,7 +18,7 @@
     wp_reset_postdata();
 ?>
 
-<section class="container flex-column">
+<section class="container flex-column spacing-top-5xl">
   <header>
     <h2> <?php QrCodeIcon(); echo $params['title']; ?> </h2>
 

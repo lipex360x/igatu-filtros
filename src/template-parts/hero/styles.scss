@@ -1,5 +1,8 @@
 .hero {
-  @extend .spacing-top-xl, .flex, .justify-between, .gap-base, .container;
+  img {
+    width: 450px;
+    border-radius: 8px; 
+  }
 
   @include onTablet {
     flex-direction: column;
@@ -11,14 +14,7 @@
     }
   }
 
-  img {
-    width: 450px;
-    border-radius: 8px; 
-  }
-
-  .content {
-    @extend .flex, .flex-column, .justify-center, .gap-base;
-  
+  .content { 
     h2 {
       color: $grey;
       font-size: 3.2rem;

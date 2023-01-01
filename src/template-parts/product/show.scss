@@ -1,18 +1,11 @@
 .show {
   &.container {
-    display: grid;
     grid-template-columns: 3fr 5fr;
     gap: 2rem;
   }
 
   .content {
-    p {
-      @extend .font-lg;
-    }
-
-    h2 {
-      @extend .text-center, .font-xl, .spacing-top-md;
-    }
+    h2 { @extend .text-center, .font-xl, .spacing-top-md; }
   } 
 
   @include onTablet {
