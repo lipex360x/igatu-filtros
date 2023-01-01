@@ -1,7 +1,3 @@
-<?php
-  var_dump(get_field('temperatura'));
-?>
-
 <section class="spacing show-filter">
   <div class="container">
     <div class="images">
