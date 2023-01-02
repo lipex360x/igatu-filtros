@@ -8,7 +8,7 @@
   ));
 
   $nbrPost = $getNbrText->posts[0];
-  $nbrText = get_field('nbr') != '' ? get_field('nbr') : get_field('texto', $nbrPost->ID);
+  $nbrText = !empty(get_field('nbr')) ? get_field('nbr') : get_field('texto', $nbrPost->ID);
 
 ?>
 
