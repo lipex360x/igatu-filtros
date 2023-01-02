@@ -4,7 +4,6 @@ class QueryFixedtexts {
     $this->slug = 'fixedtexts';
 
     add_action('pre_get_posts', array($this, 'setQuery'));
-    add_filter('posts_where', array($this, 'postWhere'), 10, 2);
   }
 
   function setQuery($query) {
@@ -15,13 +14,6 @@ class QueryFixedtexts {
     }  
   }
 
-  function postWhere($where, $wp_query) {
-    global $wpdb;
-    if($title = $wp_query->get('search_title')) {
-      $where .= " AND " . $wpdb->posts . ".post_title LIKE '" . esc_sql($wpdb->esc_like($title)) . "%'";
-    }
-    return $where;
-  }
 }
 
 $queryFixedtexts = new QueryFixedtexts;

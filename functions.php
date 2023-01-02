@@ -28,6 +28,16 @@ function themeFeatures() {
 }
 add_action('after_setup_theme', 'themeFeatures');
 
+// Query Post Where
+function postWhere($where, $wp_query) {
+  global $wpdb;
+  if($title = $wp_query->get('search_title')) {
+    $where .= " AND " . $wpdb->posts . ".post_title LIKE '" . esc_sql($wpdb->esc_like($title)) . "%'";
+  }
+  return $where;
+}
+add_filter('posts_where', 'postWhere', 10, 2);
+
 // WP Migration
 function migrationIgnoreFiles() {
   $exclude[] = 'themes/wp-gen-theme/node_modules';
