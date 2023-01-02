@@ -1,5 +1,4 @@
 <?php
-
   $getNbrText = new WP_Query(array(
     'post_type' => 'fixedtexts',
     'search_title' => 'NBR',
@@ -9,6 +8,20 @@
 
   $nbrPost = $getNbrText->posts[0];
   $nbrText = !empty(get_field('nbr')) ? get_field('nbr') : get_field('texto', $nbrPost->ID);
+
+  wp_reset_postdata();
+
+  $getThirdMarks = new WP_Query(array(
+    'post_type' => 'fixedtexts',
+    'search_title' => 'Marcas Terceiras',
+    'orderby' => 'title',
+    'order' => 'ASC',
+  ));
+
+  $thirdMarks = $getThirdMarks->posts[0];
+  $thirdMarksText = get_field('texto', $thirdMarks->ID);
+
+  wp_reset_postdata();
 
 ?>
 
@@ -185,7 +198,8 @@
     </table>
 
     <div><p><small>* Valores recomendados, ** Valores aproximados</small></p></div>
-    <div class="nbr"><p><?= $nbrText ?></p></div>
+    <div class="otherTexts"><p><?= $nbrText ?></p></div>
+    <div class="otherTexts"><p><?= $thirdMarksText ?></p></div>
 
   </div>
 </section>
