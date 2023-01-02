@@ -6,10 +6,12 @@
 
   .content {
     h2 { @extend .text-center, .font-xl, .spacing-top-md; }
+    small {opacity: 0.7;}
+    .nbr { margin-top: 1rem; text-align: center; font-size: 1.4rem;}
   } 
 
   @include onTablet {
-    .container {
+    &.container {
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
   }

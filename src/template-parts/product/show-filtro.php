@@ -1,3 +1,17 @@
+<?php
+
+  $getNbrText = new WP_Query(array(
+    'post_type' => 'fixedtexts',
+    'search_title' => 'NBR',
+    'orderby' => 'title',
+    'order' => 'ASC',
+  ));
+
+  $nbrPost = $getNbrText->posts[0];
+  $nbrText = get_field('nbr') != '' ? get_field('nbr') : get_field('texto', $nbrPost->ID);
+
+?>
+
 <section class="show container grid spacing-top-5xl">
   <div class="images">
     <img
@@ -169,5 +183,10 @@
         </tr>
       </tbody>
     </table>
+
+    <div><p><small>* Valores recomendados, ** Valores aproximados</small></p></div>
+    <div class="nbr"><p><?= $nbrText ?></p></div>
+
   </div>
 </section>
+
