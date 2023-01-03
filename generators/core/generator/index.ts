@@ -1,4 +1,4 @@
-import { CreateFileProps, generatorHandler, textTransformHandle } from "../handles"
+import { CreateFileProps, generatorHandler, textTransformHandle } from "../handlers"
 
 export default {
   description: 'New Plop Generator',

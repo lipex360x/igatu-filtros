@@ -1,5 +1,5 @@
 import { PlopGeneratorConfig } from "plop"
-import { CreateFileProps, generatorHandler, UpdateFileProps } from "../../core/handles"
+import { CreateFileProps, generatorHandler, UpdateFileProps } from "../../core/handlers"
 
 export default<PlopGeneratorConfig> {
   description: 'Generate SVGIcon',

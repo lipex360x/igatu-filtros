@@ -1,5 +1,5 @@
 import { PlopGeneratorConfig } from "plop";
-import { CreateFileProps, generatorHandler, textTransformHandle, UpdateFileProps } from "../../core/handles";
+import { CreateFileProps, generatorHandler, textTransformHandle, UpdateFileProps } from "../../core/handlers";
 
 export default<PlopGeneratorConfig> {
   description: 'Generate Custom Post Type',
@@ -68,13 +68,13 @@ export default<PlopGeneratorConfig> {
       }
     ]
 
-    response.generateArchive ?? createFiles.push({
+    response.generateArchive && createFiles.push({
       path: `${basePath}/../../../single-${slug}.php`,
       templateFile: `${templatePath}/single.hbs`,
       templateData
     })
 
-    response.generateSingle ?? createFiles.push({
+    response.generateSingle && createFiles.push({
       path: `${basePath}/../../../archive-${slug}.php`,
       templateFile: `${templatePath}/archive.hbs`,
       templateData

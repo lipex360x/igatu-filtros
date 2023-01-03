@@ -1,0 +1,16 @@
+<?php get_header(); ?>
+
+<div class="container">
+  <h2>Archive Carcacas</h2>
+
+  <ul>
+    <?php while(have_posts()): the_post(); ?>
+
+    <li><?php the_title() ?></li>
+
+    <?php endwhile; ?>
+  </ul>
+
+</div>
+
+<?php get_footer(); ?>
