@@ -1,16 +1,16 @@
 <?php get_header(); ?>
 
-<?php 
-  PageHeader(array('title' => get_the_title()));
+<?php PageHeader(array('title' => get_the_title())); ?>
 
+<?php
   get_template_part('src/template-parts/product/show', 'filtro');
 
-  $relatedElements = get_field('elementos_relacionados');
+  $relatedItens = get_field('elementos_relacionados');
 
-  if($relatedElements) {
+  if($relatedItens) {
     RelatedItem(array(
       'title' => 'Itens Relacionados',
-      'data' => $relatedElements,
+      'data' => $relatedItens,
     ));
   }
   

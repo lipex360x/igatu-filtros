@@ -10,3 +10,4 @@ require_once('CardsIcon.php');
 require_once('HandsIcon.php');
 require_once('FilterIcon.php');
 require_once('ElementIcon.php');
+require_once('calendarCheckIcon.php');

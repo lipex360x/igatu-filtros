@@ -5,5 +5,10 @@
 
   FilterSection();
   ElementSection();
+?>
 
-  get_footer();
+<div>
+  
+</div>
+
+<?php get_footer(); ?>

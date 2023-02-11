@@ -2,26 +2,19 @@
 
 <?php PageHeader(array('title' => get_the_title())); ?>
 
-
-<section class="cards">
-
-  <div class="container">
-
-    <?php get_template_part('src/template-parts/product/show', 'elemento') ?>
-
-    <?php 
+<?php 
+  get_template_part('src/template-parts/product/show', 'elemento') ;
   
-      // $request = array(
-      //   'title' => 'Produtos Relacionados',
-      //   'subtitle' => 'Veja todos os Filtros',
-      //   'data'=> $getFiltros,
-      // );
-      
-      // ProductSection($request);
-    ?>
+  $relatedItens = get_field('filtros_relacionados');
 
-  </div>
+  if($relatedItens) {
+    RelatedItem(array(
+      'title' => 'Itens Relacionados',
+      'data' => $relatedItens,
+    ));
+  }
 
-</section>
+  ElementSection();
+  get_footer(); 
 
-<?php get_footer(); ?>
+?>

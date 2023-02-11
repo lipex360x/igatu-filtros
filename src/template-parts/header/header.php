@@ -24,7 +24,7 @@
             <a href="<?= get_post_type_archive_link('filtros') ?>">Filtros</a>
           </li>
           <li>
-            <a href="#">Elementos</a>
+          <a href="<?= get_post_type_archive_link('elementos') ?>">Elementos</a>
           </li>
           <li>
             <a href="#">Fale Conosco</a>

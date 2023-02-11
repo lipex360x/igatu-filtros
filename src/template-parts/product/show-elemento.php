@@ -1,5 +1,16 @@
 <?php 
-  // var_dump(get_field('desempenho'));
+  $lifeSpanLitres = get_field('desempenho')['vida_util']['litros'];
+  $lifeSpanMonth = get_field('desempenho')['vida_util']['meses'];
+  $chlorine = get_field('desempenho')['cloro'];
+
+  $chlorineText = $chlorine 
+  ? "≥ $chlorine%"
+  : "não se aplica";
+
+
+  $lifeSpan = $lifeSpanLitres 
+    ? "$lifeSpanLitres litros ou até $lifeSpanMonth meses que poderão variar de acordo com a qualidade da água e a frequência de uso."
+    : "$lifeSpanMonth meses ou sempre que ocorrer redução significativa do fluxo da água.";
 
   $getThirdMarks = new WP_Query(array(
     'post_type' => 'fixedtexts',
@@ -90,7 +101,7 @@
         
         <tr>
           <td>Redução de cloro livre</td>
-          <td>≥ <?= get_field('desempenho')['cloro'] ?>%</td>
+          <td><?= $chlorineText ?></td>
         </tr>
 
         <tr>
@@ -100,7 +111,7 @@
 
         <tr>
           <td>Vida útil</td>
-          <td><?= get_field('desempenho')['vida_util'] ?></td>
+          <td><?= $lifeSpan ?></td>
         </tr>
       </tbody>
     </table>

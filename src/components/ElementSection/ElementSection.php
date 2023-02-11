@@ -18,7 +18,7 @@
     wp_reset_postdata();
 ?>
 
-<section class="container flex-column spacing-top-5xl">
+<section class="container flex-column spacing-top-5xl spacing-bottom-5xl">
   <header>
     <h2><?php ElementIcon(); echo $params['title']; ?></h2>
 
