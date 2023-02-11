@@ -1,6 +1,11 @@
 <?php
   $lifeSpanLitres = get_field('desempenho')['vida_util']['litros'];
   $lifeSpanMonth = get_field('desempenho')['vida_util']['meses'];
+  
+  $lifeSpan = $lifeSpanLitres
+  ? "$lifeSpanLitres litros / $lifeSpanMonth meses"
+  : "$lifeSpanMonth meses (ver detalhes)";
+
 ?>
 
 <a href="<?php the_permalink() ?>">
@@ -13,7 +18,7 @@
       <h3 class="title description"><?php the_title(); ?></h3>
       <div class="features">
         <span title="vazão máxima/nominal">
-          <?php CalendarCheckIcon() ?> vida útil: <?= $lifeSpanLitres ?> litros / <?= $lifeSpanMonth ?> meses
+          <?php CalendarCheckIcon() ?> vida útil: <?= $lifeSpan ?>
         </span>
 
         <span>

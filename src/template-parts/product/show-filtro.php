@@ -197,9 +197,9 @@
       </tbody>
     </table>
 
-    <div><p><small>* Valores recomendados, ** Valores aproximados</small></p></div>
-    <div class="otherTexts"><p><?= $nbrText ?></p></div>
-    <div class="otherTexts"><p><?= $thirdMarksText ?></p></div>
+    <div><p><small class="opacity-70">* Valores recomendados, ** Valores aproximados</small></p></div>
+    <div class="otherTexts"><p class="opacity-70"><?= $nbrText ?></p></div>
+    <div class="otherTexts"><p class="opacity-70"><?= $thirdMarksText ?></p></div>
 
   </div>
 </section>
