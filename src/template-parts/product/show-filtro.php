@@ -28,14 +28,14 @@
 <section class="show container grid spacing-top-5xl">
   <div class="images">
     <img
-      src="<?= get_field('product_image')['sizes']['large'] ?>"
-      alt="<?= get_field('product_image')['title'] ?>"
+      src="<?= get_field('imagem')['sizes']['large'] ?>"
+      alt="<?= get_field('imagem')['title'] ?>"
     />
 
     <?php if(get_field('selo_inmetro')) : ?>
       <img
         src="<?= get_field('selo_inmetro')['sizes']['large'] ?>"
-        alt="<?= get_field('product_image')['title'] ?>"
+        alt="<?= get_field('imagem')['title'] ?>"
       />
     <?php endif; ?>
   </div>
@@ -69,7 +69,7 @@
                 <td>Tipo: <?= get_field('classificacao')['tipo'] ?></td>
               </tr>
               <tr>
-                <td>Local de Instalação: <?= get_field('instalacao') ?></td>
+                <td>Local de Instalação: <?= get_field('classificacao')['local_instalacao'] ?></td>
               </tr>
             </table>
           </td>
@@ -152,27 +152,27 @@
       <tbody>
         <tr>
           <td>Retenção de partículas</td>
-          <td>Classe C (≥ 5 a &lt; 15 µm)</td>
+          <td><?= get_field('desempenho')['classe'] ?></td>
         </tr>
         
         <tr>
           <td>Redução de cloro livre</td>
-          <td>≥ 75%</td>
+          <td>≥ <?= get_field('desempenho')['cloro'] ?>%</td>
         </tr>
 
         <tr>
           <td>Eficiência bacteriológica</td>
-          <td>Não se aplica</td>
+          <td><?= get_field('desempenho')['eficiencia_bac'] ?></td>
         </tr>
 
         <tr>
           <td>Controle do nível microbiológico</td>
-          <td>Aprovado</td>
+          <td><?= get_field('desempenho')['controle_micro'] ?></td>
         </tr>
 
         <tr>
           <td>Limite máx. de concentração de extraíveis</td>
-          <td>Aprovado</td>
+          <td><?= get_field('desempenho')['limite_extraiveis'] ?></td>
         </tr>								
       </tbody>
     </table>
