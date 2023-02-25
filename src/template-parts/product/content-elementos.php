@@ -3,8 +3,8 @@
   $lifeSpanMonth = get_field('desempenho')['vida_util']['meses'];
   
   $lifeSpan = $lifeSpanLitres
-  ? "$lifeSpanLitres litros / $lifeSpanMonth meses"
-  : "$lifeSpanMonth meses (ver detalhes)";
+  ? "$lifeSpanLitres litros em até $lifeSpanMonth meses"
+  : "até $lifeSpanMonth meses";
 
 ?>
 

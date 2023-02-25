@@ -44,3 +44,15 @@ function migrationIgnoreFiles() {
   return $exclude;
 }
 add_action('ai1wm_exclude_content_from_export', 'migrationIgnoreFiles');
+
+
+function mailtrap($phpmailer) {
+  $phpmailer->isSMTP();
+  $phpmailer->Host = 'sandbox.smtp.mailtrap.io';
+  $phpmailer->SMTPAuth = true;
+  $phpmailer->Port = 2525;
+  $phpmailer->Username = 'c7b59456f6d4d8';
+  $phpmailer->Password = '41ac099a1f68bb';
+}
+
+add_action('phpmailer_init', 'mailtrap');

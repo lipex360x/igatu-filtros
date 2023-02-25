@@ -9,8 +9,8 @@
 
 
   $lifeSpan = $lifeSpanLitres 
-    ? "$lifeSpanLitres litros ou até $lifeSpanMonth meses que poderão variar de acordo com a qualidade da água e a frequência de uso."
-    : "$lifeSpanMonth meses ou sempre que ocorrer redução significativa do fluxo da água.";
+    ? "$lifeSpanLitres litros em até $lifeSpanMonth meses dependendo do uso e da qualidade da água."
+    : "até $lifeSpanMonth meses dependendo do uso do elemento filtrante e da qualidade da água devendo ser substituído quando ocorrer redução significativa do fluxo da água.";
 
   $getThirdMarks = new WP_Query(array(
     'post_type' => 'fixedtexts',
